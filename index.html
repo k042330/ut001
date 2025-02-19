@@ -1,7 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="refresh" content="0; url=https://t.me/gofunkefu_bot?start=contact">
+    <script>
+        window.onload = function() {
+            // 重定向到 Telegram bot
+            window.location.href = "https://t.me/gofunkefu_bot?start=contact";
+            
+            // 延遲 1 秒後關閉視窗
+            setTimeout(function() {
+                window.Telegram.WebApp.close();
+            }, 1000);
+        }
+    </script>
 </head>
 <body>
     <p>正在跳轉...</p>
