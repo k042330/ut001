@@ -5,12 +5,16 @@
     <title>跳轉中...</title>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
+        let tg = window.Telegram.WebApp;
+        
         document.addEventListener('DOMContentLoaded', function() {
-            if (window.Telegram && window.Telegram.WebApp) {
-                window.Telegram.WebApp.ready();
-                window.Telegram.WebApp.close();
-            }
-            window.location.href = "https://t.me/gofunkefu_bot?start=contact";
+            // 直接使用 tg:// 協議
+            window.location.href = "tg://resolve?domain=gofunkefu_bot&start=contact";
+            
+            // 如果 tg:// 協議無效，則使用 https
+            setTimeout(function() {
+                window.location.href = "https://t.me/gofunkefu_bot?start=contact";
+            }, 100);
         });
     </script>
 </head>
